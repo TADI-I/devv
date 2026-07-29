@@ -57,28 +57,46 @@
 :root {
   --cleanon-font: "Poppins", sans-serif;
   --cleanon-font-two: "Rubik", sans-serif;
-  --cleanon-gray: #595752;
-  --cleanon-gray-rgb: 89, 87, 82;
-  --cleanon-base: #f1ab21;
-  --cleanon-base-rgb: 241, 171, 33;
-  --cleanon-black: #0c342f;
-  --cleanon-black-rgb: 12, 52, 47;
-  --cleanon-extra: #0a7158;
-  --cleanon-extra-rgb: 10, 113, 88;
-  --cleanon-primary: #f7f4f1;
-  --cleanon-primary-rgb: 247, 244, 241;
-  --cleanon-secondary: #0e3026;
-  --cleanon-secondary-rgb: 14, 48, 38;
+  --cleanon-gray: #52677a;
+  --cleanon-gray-rgb: 82, 103, 122;
+  --cleanon-base: #167eaf;
+  --cleanon-base-rgb: 22, 126, 175;
+  --cleanon-black: #00224f;
+  --cleanon-black-rgb: 0, 34, 79;
+  --cleanon-extra: #00224f;
+  --cleanon-extra-rgb: 0, 34, 79;
+  --cleanon-accent: #55b9e8;
+  --cleanon-accent-rgb: 85, 185, 232;
+  --cleanon-primary: #f1f8fc;
+  --cleanon-primary-rgb: 241, 248, 252;
+  --cleanon-secondary: #00183a;
+  --cleanon-secondary-rgb: 0, 24, 58;
   --cleanon-white: #ffffff;
   --cleanon-white-rgb: 255, 255, 255;
-  --cleanon-bdr-color: #ded8cf;
-  --cleanon-bdr-color-rgb: 222, 216, 207;
+  --cleanon-bdr-color: #d6e5ed;
+  --cleanon-bdr-color-rgb: 214, 229, 237;
   --cleanon-bdr-radius: 10px;
 }
 
+/* Devashrr logo palette: neutralise legacy green artwork and status colours. */
+img[src*="assets/images/shapes/"] {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(62%) saturate(1116%)
+    hue-rotate(157deg) brightness(88%) contrast(91%);
+}
 
-
-
+.about-two__left-bg-shape,
+.about-two__progress-inner-bg-shape,
+.about-two__our-journey-bg-shape,
+.about-three__cleaning-gurante-bg-shape,
+.process-one__bg-shape,
+.project-one__content-bg-shape,
+.progress-one__left-bg-shape,
+.progress-one__bg-shape,
+.cta-one__shape-bg,
+.footer-widget__contact-bg-shape {
+  background-image: none !important;
+  background-color: var(--cleanon-extra);
+}
 
 .row {
   --bs-gutter-x: 30px;
@@ -5611,6 +5629,54 @@ html.lenis body {
   }
 }
 
+/* Shared navigation used on every public page */
+.main-header--unified .main-menu-two__logo img {
+  display: block;
+  width: auto;
+  max-width: 150px;
+  height: 74px;
+  object-fit: contain;
+}
+
+.main-header--unified .main-menu-two__wrapper-inner {
+  min-height: 92px;
+}
+
+.main-header--unified .main-menu__list > li > a {
+  text-transform: capitalize;
+}
+
+.main-header--unified .main-menu__list > li.current > a {
+  color: var(--cleanon-base);
+}
+
+.main-header--unified .main-menu-two__right {
+  min-width: max-content;
+}
+
+.main-header--unified .main-menu-two__btn-box .thm-btn {
+  padding: 14px 25px;
+}
+
+@media (max-width: 991px) {
+  .main-header--unified__top {
+    display: none;
+  }
+
+  .main-header--unified .main-menu-two__right {
+    display: none;
+  }
+
+  .main-header--unified .main-menu-two__wrapper-inner {
+    min-height: 82px;
+  }
+
+  .main-header--unified .main-menu-two__logo img {
+    height: 64px;
+    max-width: 130px;
+  }
+}
+
 .main-slider-three__img-holder-box {
   position: relative;
   display: flex;
@@ -5776,8 +5842,8 @@ html.lenis body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #10362f;
-  background: linear-gradient(270deg, rgba(16, 54, 47, 0) 0%, rgba(16, 54, 47, 0.8) 50%, rgba(16, 54, 47, 1) 100%);
+  background: #00224f;
+  background: linear-gradient(270deg, rgba(0, 34, 79, 0) 0%, rgba(0, 34, 79, 0.8) 50%, rgba(0, 34, 79, 1) 100%);
   z-index: -1;
 }
 
@@ -9683,7 +9749,7 @@ div[class^="bubble-"] {
   height: 210px;
   border: 5px solid var(--cleanon-white);
   transform: translateX(-50%);
-  background: linear-gradient(0deg, rgba(248, 245, 241, 0) 0%, rgba(11, 112, 88, 1) 100%);
+  background: linear-gradient(0deg, rgba(248, 245, 241, 0) 0%, rgba(22, 126, 175, 1) 100%);
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 48.51px 0.49px;
   z-index: -1;
@@ -9900,8 +9966,8 @@ Cost Calculator
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgb(14, 48, 38);
-  background: linear-gradient(90deg, rgba(14, 48, 38, 0) 0%, rgba(14, 48, 38, 0) 13%, rgba(14, 48, 38, 0.2553396358543417) 22%, rgba(14, 48, 38, 0.8743872549019608) 45%, rgba(14, 48, 38, 1) 74%, rgba(14, 48, 38, 1) 100%);
+  background: rgb(0, 24, 58);
+  background: linear-gradient(90deg, rgba(0, 24, 58, 0) 0%, rgba(0, 24, 58, 0) 13%, rgba(0, 24, 58, 0.2553396358543417) 22%, rgba(0, 24, 58, 0.8743872549019608) 45%, rgba(0, 24, 58, 1) 74%, rgba(0, 24, 58, 1) 100%);
   content: "";
   z-index: -1;
 }
@@ -11075,6 +11141,74 @@ Cost Calculator
   color: var(--cleanon-base);
 }
 
+/* Shared footer used on every public page */
+.site-footer--unified .site-footer__top-inner {
+  padding: 90px 0 75px;
+}
+
+.site-footer--unified__row {
+  row-gap: 45px;
+}
+
+.site-footer--unified .footer-widget__about {
+  margin-right: 30px;
+}
+
+.site-footer--unified .footer-widget__links {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.site-footer--unified .footer-widget__contact-info {
+  margin-right: 0;
+}
+
+.site-footer--unified .footer-widget__contact-info-box {
+  padding: 25px 22px 20px;
+}
+
+.site-footer--unified .footer-widget__contact-info-list li {
+  min-width: 0;
+}
+
+.site-footer--unified .footer-widget__contact-info-list li .icon {
+  flex: 0 0 auto;
+}
+
+.site-footer--unified .footer-widget__contact-info-list li p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.site-footer--unified .footer-widget__contact-info-list li p a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.site-footer--unified .site-footer__bottom-inner {
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .site-footer--unified .site-footer__top-inner {
+    padding: 70px 0 55px;
+  }
+
+  .site-footer--unified .footer-widget__about {
+    margin-right: 0;
+  }
+
+  .site-footer--unified .footer-widget__contact-info-box {
+    padding: 22px 18px 18px;
+  }
+
+  .site-footer--unified .footer-widget__contact-info-list li {
+    align-items: flex-start;
+    padding: 8px 9px 12px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Feature One
 --------------------------------------------------------------*/
@@ -12051,7 +12185,7 @@ Cost Calculator
   margin-right: -90px;
   padding: 41px 90px 50px;
   clip-path: circle(76.6% at 33% 45%);
-  background: linear-gradient(270deg, #0b7058 0%, #0b7058 100%);
+  background: linear-gradient(270deg, #167eaf 0%, #167eaf 100%);
   z-index: 1;
 }
 
@@ -12116,7 +12250,7 @@ Cost Calculator
   flex-direction: column;
   border-radius: 50%;
   margin: 0 auto;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.69) 0%, #0b7058 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.69) 0%, #167eaf 100%);
 }
 
 .services-three__tab-doller {
@@ -12279,9 +12413,9 @@ Cost Calculator
 .award-one__award-content {
   position: relative;
   display: block;
-  background-image: -moz-linear-gradient(90deg, rgb(11, 112, 88) 0%, rgb(12, 77, 69) 100%);
-  background-image: -webkit-linear-gradient(90deg, rgb(11, 112, 88) 0%, rgb(12, 77, 69) 100%);
-  background-image: -ms-linear-gradient(90deg, rgb(11, 112, 88) 0%, rgb(12, 77, 69) 100%);
+  background-image: -moz-linear-gradient(90deg, rgb(22, 126, 175) 0%, rgb(0, 34, 79) 100%);
+  background-image: -webkit-linear-gradient(90deg, rgb(22, 126, 175) 0%, rgb(0, 34, 79) 100%);
+  background-image: -ms-linear-gradient(90deg, rgb(22, 126, 175) 0%, rgb(0, 34, 79) 100%);
   padding: 64px 50px 20px;
   margin-top: 30px;
   margin-right: 1px;
@@ -15838,7 +15972,7 @@ Project Two
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, rgba(16, 54, 47, 0.976) 0%, rgba(16, 54, 47, 0.85) 50%, rgba(16, 54, 47, 0) 80%);
+  background: linear-gradient(90deg, rgba(0, 34, 79, 0.976) 0%, rgba(0, 34, 79, 0.85) 50%, rgba(0, 34, 79, 0) 80%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -18217,7 +18351,7 @@ Blog Three
   position: relative;
   display: block;
   border-radius: var(--cleanon-bdr-radius);
-  background: linear-gradient(180deg, #FFFFFF 0%, #f8f5f1 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #f1f8fc 100%);
   border: 1px solid rgba(var(--cleanon-black-rgb), 0.05);
   padding: 58px 30px 31px;
   margin-bottom: 30px;
@@ -19103,7 +19237,7 @@ Brand One
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-  background: linear-gradient(90deg, rgba(11, 112, 88, 0.69) 0%, #0e3026 100%);
+  background: linear-gradient(90deg, rgba(22, 126, 175, 0.69) 0%, #00183a 100%);
   border-radius: 4px;
   padding: 12px 25px 12px;
   margin-top: 39px;
@@ -21311,7 +21445,7 @@ Brand One
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, rgba(16, 54, 47, 0.976) 0%, rgba(16, 54, 47, 0.85) 60%, rgba(16, 54, 47, 0) 80%);
+  background: linear-gradient(90deg, rgba(0, 24, 58, 0.96) 0%, rgba(0, 34, 79, 0.84) 60%, rgba(0, 34, 79, 0.08) 100%);
 }
 
 .page-header__inner {
@@ -21387,7 +21521,7 @@ Brand One
 # Main Header Six
 --------------------------------------------------------------*/
 .main-header-six .main-menu-two__wrapper-inner {
-  background: linear-gradient(90deg, rgba(11, 112, 88, 0.50) 0%, #0e3026 100%);
+  background: linear-gradient(90deg, rgba(22, 126, 175, 0.50) 0%, #00183a 100%);
 }
 
 /*--------------------------------------------------------------
@@ -23268,7 +23402,7 @@ Product
   position: relative;
   display: block;
   padding-left: 30px;
-  color: #ffc009;
+  color: #55b9e8;
   font-size: 16px;
   line-height: 16px;
   font-weight: 400;
@@ -23453,7 +23587,7 @@ Product
 }
 
 .shop-product-recent-products ul li .content .review i {
-  color: #ffc009;
+  color: #55b9e8;
   font-size: 12px;
 }
 
@@ -29038,8 +29172,8 @@ Privacy Policy Page
 .dashboard__completed-style {
   position: relative;
   display: inline-block;
-  color: #198754;
-  background-color: #d1e7dd;
+  color: #167eaf;
+  background-color: #e6f4fb;
   font-size: 12px;
   line-height: 12px;
   font-weight: 600;
@@ -29441,8 +29575,8 @@ Privacy Policy Page
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #d1fae5;
-  color: #065f46;
+  background-color: #e6f4fb;
+  color: #00224f;
   font-size: 14px;
   font-weight: 600;
   line-height: 14px;
@@ -29856,8 +29990,8 @@ Privacy Policy Page
 .dashboard__my-wishlist-status {
   position: relative;
   display: block;
-  background-color: #d1fae5;
-  color: #065f46;
+  background-color: #e6f4fb;
+  color: #00224f;
   font-size: 12px;
   font-weight: 500;
   line-height: 12px;
@@ -30111,7 +30245,7 @@ Privacy Policy Page
   right: 0;
   height: 12px;
   width: 12px;
-  background: #07b89d;
+  background: #167eaf;
   border-radius: 50%;
   border: 2px solid var(--cleanon-white);
 }
@@ -30121,7 +30255,7 @@ Privacy Policy Page
 }
 
 .chat__item-avator-online.busy {
-  background: #f0b002;
+  background: #55b9e8;
 }
 
 .chat__item-avator img {
@@ -30198,8 +30332,8 @@ Privacy Policy Page
 .chat__window-header-content p {
   position: relative;
   display: block;
-  background-color: #d1fae5;
-  color: #065f46;
+  background-color: #e6f4fb;
+  color: #00224f;
   font-size: 12px;
   font-weight: 500;
   line-height: 12px;
@@ -30747,6 +30881,109 @@ Privacy Policy Page
 
 
 
+
+/* Final Devashrr palette roles — kept last so every page uses the same blues. */
+.main-header-two .main-menu-two__wrapper-inner {
+  background: linear-gradient(90deg, rgba(var(--cleanon-black-rgb), .94) 0%,
+    rgba(var(--cleanon-secondary-rgb), .97) 100%);
+}
+
+.main-menu-three__top,
+.thm-btn,
+.contact-info__icon,
+.chat-icon button,
+.banner-one__btn-box-two .thm-btn {
+  background-color: var(--cleanon-base);
+}
+
+.hover-btn,
+.banner-one__btn-box-two .thm-btn .hover-btn {
+  background-color: var(--cleanon-extra);
+}
+
+.section-title__tagline,
+.section-title__tagline-icon span,
+.section-title__title span,
+.banner-one__title span,
+.thm-breadcrumb li,
+.main-menu__list > li.current > a,
+.main-menu__list > li:hover > a {
+  color: var(--cleanon-accent);
+}
+
+.page-header__bg::before {
+  background: linear-gradient(90deg, rgba(var(--cleanon-secondary-rgb), .96) 0%,
+    rgba(var(--cleanon-black-rgb), .84) 60%,
+    rgba(var(--cleanon-black-rgb), .08) 100%);
+}
+
+.stricky-header.main-menu-two,
+.stricky-header.main-menu-three {
+  background-color: var(--cleanon-black);
+}
+
+.main-menu-two__logo img,
+.main-menu-three__logo img {
+  width: 92px;
+  height: 74px;
+  object-fit: contain;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  filter: brightness(0) invert(1) contrast(100%);
+}
+
+.footer-widget__about-logo img,
+.footer-widget-two__logo img {
+  width: 130px;
+  height: 108px;
+  object-fit: contain;
+  background-color: var(--cleanon-white);
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.sidebar-info-contents .logo img,
+.mobile-nav__content .logo-box img {
+  width: 130px;
+  height: auto;
+  object-fit: contain;
+}
+
+.mobile-nav__content .logo-box img {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  filter: brightness(0) invert(1) contrast(100%);
+}
+
+/* Keep viewport reveal animations quick and responsive */
+.wow.animated {
+  -webkit-animation-duration: 650ms;
+  animation-duration: 650ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wow,
+  .animated {
+    -webkit-animation: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.designer-credit {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.designer-credit a {
+  color: var(--cleanon-accent);
+}
+
+.designer-credit a:hover {
+  color: var(--cleanon-white);
+}
 
 /*--------------------------------------------------------------
 # End All Css

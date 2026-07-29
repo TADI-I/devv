@@ -1740,7 +1740,7 @@
     }
 
     .why-choose-two__bg::before {
-        background: linear-gradient(90deg, rgba(16, 54, 47, 0.976) 0%, rgba(16, 54, 47, 0.85) 100%, rgba(16, 54, 47, 0) 100%);
+        background: linear-gradient(90deg, rgba(0, 34, 79, 0.976) 0%, rgba(0, 34, 79, 0.85) 100%, rgba(0, 34, 79, 0) 100%);
     }
 
     .before-and-after__left {
@@ -3416,7 +3416,7 @@
     }
 
     .why-choose-two__bg::before {
-        background: linear-gradient(90deg, rgba(16, 54, 47, 0.976) 0%, rgba(16, 54, 47, 0.85) 100%, rgba(16, 54, 47, 0) 100%);
+        background: linear-gradient(90deg, rgba(0, 34, 79, 0.976) 0%, rgba(0, 34, 79, 0.85) 100%, rgba(0, 34, 79, 0) 100%);
     }
 
     .before-and-after__left {
@@ -5758,5 +5758,50 @@
 
 
 
+
+/* Homepage hero: 70% of the visible screen */
+.banner-one {
+    display: flex;
+    align-items: center;
+    min-height: 70vh;
+    min-height: 70svh;
+    padding-top: clamp(60px, 8vh, 110px);
+    padding-bottom: clamp(60px, 8vh, 110px);
+}
+
+@media only screen and (max-width: 991px) {
+    .banner-one {
+        height: 70vh;
+        height: 70svh;
+        min-height: 500px;
+        padding: 55px 0;
+    }
+
+    .banner-one__left {
+        margin-bottom: 0;
+    }
+
+    .banner-one__right {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .banner-one {
+        min-height: 460px;
+        padding: 45px 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .about-two__right,
+    .about-two__img-1,
+    .about-two__img-2 {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
 
 /* The End */

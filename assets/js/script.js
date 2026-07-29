@@ -38,10 +38,12 @@
   // AOS Animation
   if ($("[data-aos]").length) {
     AOS.init({
-      duration: '1200',
+      duration: 650,
+      offset: 20,
       disable: 'false',
       easing: 'ease',
-      mirror: true
+      once: true,
+      mirror: false
     });
   }
 
@@ -1606,15 +1608,15 @@
       quote.animation = gsap.to(quote.split.chars, {
         scrollTrigger: {
           trigger: quote,
-          start: "top 90%",
+          start: "top 96%",
         },
         x: "0",
         y: "0",
         rotateX: "0",
         opacity: 1,
-        duration: 1,
+        duration: .65,
         ease: Back.easeOut,
-        stagger: .02
+        stagger: .012
       });
     });
   }
