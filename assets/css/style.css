@@ -30985,6 +30985,138 @@ Privacy Policy Page
   color: var(--cleanon-white);
 }
 
+/* Fixed, full-width contact strip and primary navigation */
+.main-header-two.main-header--unified {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.page-wrapper {
+  padding-top: 134px;
+}
+
+.main-header--unified__top {
+  width: 100%;
+  background-color: var(--cleanon-base);
+}
+
+.main-header--unified__top .main-menu-two__top-inner {
+  padding-right: 0;
+  padding-left: 0;
+  background: transparent;
+}
+
+.main-header--unified .main-menu-two__wrapper {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(var(--cleanon-black-rgb), .97) 0%,
+    rgba(var(--cleanon-secondary-rgb), .98) 100%);
+  box-shadow: 0 8px 24px rgba(var(--cleanon-black-rgb), .16);
+}
+
+.main-header--unified .main-menu-two__wrapper-inner,
+.main-header-two.main-header--unified .main-menu-two__wrapper-inner {
+  background: transparent;
+  min-height: 84px;
+}
+
+.main-header--unified .main-menu-two__logo,
+.main-header--unified .main-menu-two__right {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.main-header--unified .main-menu__list > li {
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+/* The main header is always fixed, so the template's duplicate sticky header is unnecessary. */
+.stricky-header {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  .page-wrapper {
+    padding-top: 112px;
+  }
+
+  .main-header--unified__top {
+    display: block;
+  }
+
+  .main-header--unified__top .main-menu-two__top-inner {
+    min-height: 38px;
+    flex-wrap: nowrap;
+    gap: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .main-header--unified__top .main-menu-two__top-inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-header--unified__top .main-menu-two__contact-list {
+    flex: 0 0 auto;
+  }
+
+  .main-header--unified__top .main-menu-two__contact-list li:last-child,
+  .main-header--unified__top .main-menu-two__top-time {
+    display: flex;
+  }
+
+  .main-header--unified__top .main-menu-two__contact-list li + li {
+    margin-left: 20px;
+  }
+
+  .main-header--unified__top .main-menu-two__contact-list li::before {
+    left: -10px;
+  }
+
+  .main-header--unified__top .main-menu-two__contact-list li .text {
+    margin-left: 6px;
+  }
+
+  .main-header--unified__top .main-menu-two__contact-list li .text p,
+  .main-header--unified__top .main-menu-two__top-text {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .main-header--unified__top .main-menu-two__top-text {
+    margin-left: 6px;
+  }
+
+  .main-header--unified__top .main-menu-two__social {
+    display: none;
+  }
+
+  .main-header--unified .main-menu-two__logo {
+    padding: 5px 0;
+  }
+
+  .main-header--unified .main-menu-two__wrapper-inner {
+    min-height: 74px;
+  }
+}
+
+@media (max-width: 575px) {
+  .main-header--unified__top .container {
+    max-width: none;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .main-header--unified__top .main-menu-two__contact-list li .icon,
+  .main-header--unified__top .main-menu-two__top-time-icon {
+    display: none;
+  }
+}
+
 /*--------------------------------------------------------------
 # End All Css
 --------------------------------------------------------------*/

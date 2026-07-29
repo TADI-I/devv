@@ -5804,4 +5804,18 @@
     }
 }
 
+/* Keep every item in the fixed contact strip available at responsive sizes. */
+@media only screen and (max-width: 1319px) {
+    .main-header--unified__top .main-menu-two__contact-list li:last-child,
+    .main-header--unified__top .main-menu-two__top-time {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .main-header--unified__top {
+        display: block;
+    }
+}
+
 /* The End */
