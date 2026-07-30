@@ -5818,4 +5818,14 @@
     }
 }
 
+@media only screen and (max-width: 767px) {
+    .main-header--unified__top {
+        display: none;
+    }
+
+    .page-wrapper {
+        padding-top: 74px;
+    }
+}
+
 /* The End */

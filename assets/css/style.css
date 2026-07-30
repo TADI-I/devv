@@ -11564,6 +11564,74 @@ Cost Calculator
   transform-origin: bottom top;
 }
 
+.about-two__accordion .tabs-button-box {
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.about-two__accordion .tabs-button-box .tab-btn-item {
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+  border: 1px solid rgba(var(--cleanon-white-rgb), .18);
+}
+
+.about-two__accordion .tabs-button-box .tab-btn-item::after {
+  display: none;
+}
+
+.about-two__accordion .tabs-button-box .tab-btn-item h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px 12px;
+  background-color: var(--cleanon-base);
+  cursor: pointer;
+  outline: none;
+}
+
+.about-two__accordion .tabs-button-box .tab-btn-item h3::after {
+  content: "+";
+  flex: 0 0 auto;
+  margin-left: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.about-two__accordion .tabs-button-box .tab-btn-item h3:focus-visible {
+  box-shadow: inset 0 0 0 3px var(--cleanon-white);
+}
+
+.about-two__accordion .tabs-button-box .tab-btn-item.accordion-open h3 {
+  color: var(--cleanon-extra);
+  background-color: var(--cleanon-white);
+}
+
+.about-two__accordion .tabs-button-box .tab-btn-item.accordion-open h3::after {
+  content: "−";
+}
+
+.about-two__accordion .tabs-button-box .tab {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  visibility: visible;
+  background-color: rgba(var(--cleanon-white-rgb), .06);
+}
+
+.about-two__accordion .tabs-button-box .tab[hidden] {
+  display: none;
+}
+
+.about-two__accordion .about-two__single-tab {
+  opacity: 1;
+  transform: none;
+}
+
 .about-two__single-tab-inner {
   position: relative;
   display: block;
@@ -31114,6 +31182,70 @@ Privacy Policy Page
   .main-header--unified__top .main-menu-two__contact-list li .icon,
   .main-header--unified__top .main-menu-two__top-time-icon {
     display: none;
+  }
+}
+
+/* Viewport-safe services belt */
+.service-belt {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 22px 0;
+  overflow: hidden;
+  contain: inline-size;
+  background-color: transparent;
+}
+
+.service-belt__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: service-belt-scroll 36s linear infinite;
+}
+
+.service-belt__group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 32px;
+  padding-right: 32px;
+}
+
+.service-belt__group span {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 32px;
+  color: transparent;
+  font-family: var(--cleanon-font-two);
+  font-size: clamp(34px, 4.5vw, 65px);
+  font-weight: 600;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px var(--cleanon-base);
+}
+
+.service-belt__group span::after {
+  content: "✦";
+  color: var(--cleanon-accent);
+  font-size: .55em;
+  -webkit-text-stroke: 0;
+}
+
+.service-belt:hover .service-belt__track {
+  animation-play-state: paused;
+}
+
+@keyframes service-belt-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-belt__track {
+    animation-play-state: paused;
   }
 }
 

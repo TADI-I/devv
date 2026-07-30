@@ -95,4 +95,66 @@
     if (stickyHeader) {
         stickyHeader.className = "stricky-header stricked-menu main-menu main-menu-two";
     }
+
+    var accordion = document.querySelector(".about-two__tab.tab-box");
+
+    if (accordion) {
+        var accordionList = accordion.querySelector(".tabs-button-box");
+        var accordionItems = Array.prototype.slice.call(
+            accordionList.querySelectorAll(".tab-btn-item")
+        );
+        var accordionContent = accordion.querySelector(".tabs-content-box");
+
+        accordion.classList.remove("tab-box");
+        accordion.classList.add("about-two__accordion");
+
+        accordionItems.forEach(function (item, index) {
+            var heading = item.querySelector("h3");
+            var panel = document.querySelector(item.getAttribute("data-tab"));
+            var panelId = panel.id;
+            var headingId = panelId + "-heading";
+            var isOpen = item.classList.contains("active-btn");
+
+            heading.id = headingId;
+            heading.setAttribute("role", "button");
+            heading.setAttribute("tabindex", "0");
+            heading.setAttribute("aria-controls", panelId);
+            heading.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+            panel.setAttribute("role", "region");
+            panel.setAttribute("aria-labelledby", headingId);
+            panel.hidden = !isOpen;
+            item.classList.toggle("accordion-open", isOpen);
+            item.appendChild(panel);
+
+            var togglePanel = function () {
+                var shouldOpen = !item.classList.contains("accordion-open");
+
+                accordionItems.forEach(function (otherItem) {
+                    var otherHeading = otherItem.querySelector("h3");
+                    var otherPanel = otherItem.querySelector(".tab");
+
+                    otherItem.classList.remove("accordion-open", "active-btn");
+                    otherHeading.setAttribute("aria-expanded", "false");
+                    otherPanel.hidden = true;
+                });
+
+                if (shouldOpen) {
+                    item.classList.add("accordion-open", "active-btn");
+                    heading.setAttribute("aria-expanded", "true");
+                    panel.hidden = false;
+                }
+            };
+
+            heading.addEventListener("click", togglePanel);
+            heading.addEventListener("keydown", function (event) {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    togglePanel();
+                }
+            });
+        });
+
+        accordionContent.remove();
+    }
 }());
